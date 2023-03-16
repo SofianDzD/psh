@@ -38,9 +38,6 @@ fi
 if [[ "$PLATFORM" == "linux" ]]; then
   # Install packages...
   sudo apt --fix-broken install
-  sudo apt update -y
-  sudo apt install python3 -y
-  sudo apt install python3-pip -y
   for PKG in ${PSHMODE_PACKAGES[*]}; do
     sudo apt install "$PKG" -y
   done
@@ -53,8 +50,6 @@ if [[ "$PLATFORM" == "linux" ]]; then
 # Termux installation...
 elif [[ "$PLATFORM" == "termux" ]]; then
   # Install packages...
-  pkg update -y
-  pkg install python -y
   for PKG in ${PSHMODE_PACKAGES[*]}; do
     pkg install "$PKG" -y
   done
